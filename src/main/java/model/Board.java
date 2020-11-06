@@ -45,4 +45,16 @@ public class Board {
 		}
 		
 	}
+	/**
+	 * 
+	 * @param initX coordenada X del inicio del barco
+	 * @param initY coordenada Y del inicio del barco
+	 * @param orientacion del barco, 1 horizontal, 2 vertical 
+	 * @param boatType tipo de barco lancha, destructores, portaaviones, submanrino
+	 * @return
+	 */
+	
+	public boolean setBoat(int initX, int initY, int orientacion, int boatType) {
+		return true;
+	}
 }
