@@ -45,8 +45,17 @@ public class BoardTest {
 		assertTrue(gameBoard.setBoat(9, 9, 2, 1));
 		
 		//valores limite
+		//limites tablero
 		assertFalse(gameBoard.setBoat(-1, 10, 1, 1));
 		assertFalse(gameBoard.setBoat(10, -1, 1, 1));
+		
+		//limite orientacion
+		assertFalse(gameBoard.setBoat(0, 5, -1, 4));
+		assertFalse(gameBoard.setBoat(0, 5, 3, 4));
+		
+		//limite tipos de barco
+		assertFalse(gameBoard.setBoat(0, 0, 1, -1));
+		assertFalse(gameBoard.setBoat(0, 0, 1, 5));
 		
 		
 		//particiones equivalentes
