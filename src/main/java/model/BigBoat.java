@@ -1,5 +1,5 @@
 package model;
 
-public class BigBoat {
+public class BigBoat extends Boat {
 
 }
