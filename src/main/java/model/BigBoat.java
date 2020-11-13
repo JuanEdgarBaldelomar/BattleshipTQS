@@ -1,6 +1,6 @@
 package model;
 
-public class BigBoat extends Boat {
+public class BigBoat implements Boat {
 
 	private int mSize;
 	
@@ -10,6 +10,12 @@ public class BigBoat extends Boat {
 	
 	public int getSize() {
 		return this.mSize;
+	}
+
+	@Override
+	public boolean checkRule(int x, int y, int orientacion, int[][] board) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	
