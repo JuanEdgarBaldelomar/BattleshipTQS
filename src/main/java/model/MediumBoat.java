@@ -166,7 +166,7 @@ public class MediumBoat implements Boat{
 						return false;
 					}
 					
-				}else if ( (x+mSize) == FINALX_Y && y == INITX_Y) {//esquina superior derecha
+				}else if ( (x+mSize-1) == FINALX_Y && y == INITX_Y) {//esquina superior derecha
 					
 					for (int i = 0;i<mSize;i++) {//parte inferior
 						if (board[x+i][y+1] != AGUA) {
@@ -180,7 +180,7 @@ public class MediumBoat implements Boat{
 						return false;
 					}
 					
-				}else if ((x+mSize) == FINALX_Y && y == FINALX_Y) {//esquina parte inferior
+				}else if ((x+mSize-1) == FINALX_Y && y == FINALX_Y) {//esquina parte inferior
 					
 					for (int i = 0;i<mSize;i++) {//parte inferior
 						if (board[x+i][y-1] != AGUA) {
@@ -211,7 +211,7 @@ public class MediumBoat implements Boat{
 						return false;
 					}
 					
-				}else if (y == INITX_Y && x > INITX_Y && x<FINALX_Y && (x+mSize) < FINALX_Y) {//limite superior
+				}else if (y == INITX_Y && x > INITX_Y && x<FINALX_Y && (x+mSize-1) < FINALX_Y) {//limite superior
 					
 					//miramos parte inferior
 					for (int i = 0;i<mSize;i++) {
@@ -228,7 +228,7 @@ public class MediumBoat implements Boat{
 						return false;
 					}
 					
-				}else if ((x+mSize) == FINALX_Y && y>INITX_Y && y<FINALX_Y) {//limite derecha
+				}else if ((x+mSize-1) == FINALX_Y && y>INITX_Y && y<FINALX_Y) {//limite derecha
 					
 					//miramos parte superior e inferior
 					for (int i = 0;i<mSize; i++) {
@@ -244,7 +244,7 @@ public class MediumBoat implements Boat{
 					}else {
 						return false;
 					}
-				}else if (y == FINALX_Y && x>INITX_Y && x<FINALX_Y && (x+mSize)<FINALX_Y) {//linea inferior
+				}else if (y == FINALX_Y && x>INITX_Y && x<FINALX_Y && (x+mSize-1)<FINALX_Y) {//linea inferior
 					
 					for (int i =0;i<mSize;i++) {
 						if(board[x+i][y] != AGUA) {
@@ -259,7 +259,7 @@ public class MediumBoat implements Boat{
 					}
 					
 					
-				}else if (y > INITX_Y && y<FINALX_Y &&  x > INITX_Y && (x+mSize)<FINALX_Y) {
+				}else if (y > INITX_Y && y<FINALX_Y &&  x > INITX_Y && (x+mSize-1)<FINALX_Y) {
 					
 					//miramos parte superior e inferior
 					for (int i = 0;i<mSize;i++) {
