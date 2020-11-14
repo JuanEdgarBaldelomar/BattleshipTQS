@@ -11,7 +11,7 @@ public class MockBoard extends Board {
 	public int[][] getTestBoardLittleBoats(){
 		
 		int[][] board = getBoard();
-		System.out.println(board);
+		
 		board[0][1] = 1;
 		board[0][8] = 1;
 		board[1][4] = 1;

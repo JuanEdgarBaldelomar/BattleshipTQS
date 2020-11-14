@@ -78,18 +78,18 @@ public class BoatTest {
 		assertTrue(mediumBoat.checkRule(9, 8, 1, mockBoard.getTestMediumBoats()));//v. Frontera
 		
 		//barco mediano conflicto diagonal
-		assertFalse(mediumBoat.checkRule(1, 1, 2, mockBoard.getTestMediumBoats()));//superior izquierda
-		assertFalse(mediumBoat.checkRule(1, 7, 2, mockBoard.getTestMediumBoats()));//inferior izquierda
-		assertFalse(mediumBoat.checkRule(3, 1, 2, mockBoard.getTestMediumBoats()));//superior derecha
-		assertFalse(mediumBoat.checkRule(3, 7, 2, mockBoard.getTestMediumBoats()));//inferior derecha
-		assertFalse(mediumBoat.checkRule(5, 1, 1, mockBoard.getTestMediumBoats()));//horizontal superior izquierda
-		assertFalse(mediumBoat.checkRule(5, 8, 1, mockBoard.getTestMediumBoats()));//horizontal inferior izquierda
-		assertFalse(mediumBoat.checkRule(7, 4, 1, mockBoard.getTestMediumBoats()));//horizontal inferior derecha
-		assertFalse(mediumBoat.checkRule(7, 6, 1, mockBoard.getTestMediumBoats()));//horizontal inferior derecha
-		assertFalse(mediumBoat.checkRule(8, 2, 1, mockBoard.getTestMediumBoats()));//horizontal abajo VF
-		assertFalse(mediumBoat.checkRule(8, 8, 1, mockBoard.getTestMediumBoats()));//horizontal arriba VF
-		assertFalse(mediumBoat.checkRule(9, 9, 1, mockBoard.getTestMediumBoats()));//horizontal arriba VL
-		assertTrue(mediumBoat.checkRule(2, 8, 1, mockBoard.getTestMediumBoats()));//v. Frontera
+		assertFalse(mediumBoat.checkRule(1, 1, 2, mockBoard.getTestMediumBoatsDiagonal()));//superior izquierda
+		assertFalse(mediumBoat.checkRule(1, 7, 2, mockBoard.getTestMediumBoatsDiagonal()));//inferior izquierda
+		assertFalse(mediumBoat.checkRule(3, 1, 2, mockBoard.getTestMediumBoatsDiagonal()));//superior derecha
+		assertFalse(mediumBoat.checkRule(3, 7, 2, mockBoard.getTestMediumBoatsDiagonal()));//inferior derecha
+		assertFalse(mediumBoat.checkRule(5, 1, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal superior izquierda
+		assertFalse(mediumBoat.checkRule(5, 8, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal inferior izquierda
+		assertFalse(mediumBoat.checkRule(7, 4, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal inferior derecha
+		assertFalse(mediumBoat.checkRule(7, 6, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal inferior derecha
+		assertFalse(mediumBoat.checkRule(8, 2, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal abajo VF
+		assertFalse(mediumBoat.checkRule(8, 8, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal arriba VF
+		assertFalse(mediumBoat.checkRule(9, 9, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal arriba VL
+		assertTrue(mediumBoat.checkRule(2, 8, 1, mockBoard.getTestMediumBoatsDiagonal()));//v. Frontera
 		
 		//barco grande
 		//vertical
