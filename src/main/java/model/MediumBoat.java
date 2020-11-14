@@ -82,7 +82,7 @@ public class MediumBoat implements Boat{
 						}
 						if (board[x][y-1] ==  AGUA){//arriba
 							
-							if(board[x-1][y-1] != AGUA || board[x+1][y-1] != AGUA){//diagonales
+							if(board[x-1][y-1] != AGUA || board[x+1][y-1] != AGUA || board[x-1][y+mSize] != AGUA || board[x+1][y+mSize] != AGUA){//diagonales
 								return false;
 							}else {
 								return true;

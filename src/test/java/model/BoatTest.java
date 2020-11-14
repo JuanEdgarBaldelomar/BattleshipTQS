@@ -65,6 +65,7 @@ public class BoatTest {
 		assertTrue(littleBoat.checkRule(8, 2, 1,  mockBoard.getTestBoardLittleBoats()));
 		assertTrue(littleBoat.checkRule(9, 9, 1,  mockBoard.getTestBoardLittleBoats()));//V.Fontera 9,9
 		
+		mockBoard = new MockBoard();
 		//barco mediano
 		assertFalse(mediumBoat.checkRule(0, 0, 2, mockBoard.getTestMediumBoats()));//conflicto abajo
 		assertFalse(mediumBoat.checkRule(0, 8, 2, mockBoard.getTestMediumBoats()));//conflicto arriba
@@ -75,8 +76,10 @@ public class BoatTest {
 		assertTrue(mediumBoat.checkRule(8, 0, 1, mockBoard.getTestMediumBoats()));//v. Frontera
 		assertTrue(mediumBoat.checkRule(9, 0, 2, mockBoard.getTestMediumBoats()));//v. Frontera
 		assertTrue(mediumBoat.checkRule(8, 6, 1, mockBoard.getTestMediumBoats()));//v. Frontera
-		assertTrue(mediumBoat.checkRule(9, 8, 1, mockBoard.getTestMediumBoats()));//v. Frontera
+		assertFalse(mediumBoat.checkRule(9, 8, 1, mockBoard.getTestMediumBoats()));//v. limite
+		assertTrue(mediumBoat.checkRule(9, 8, 2, mockBoard.getTestMediumBoats()));//v. limite
 		
+		mockBoard = new MockBoard();
 		//barco mediano conflicto diagonal
 		assertFalse(mediumBoat.checkRule(1, 1, 2, mockBoard.getTestMediumBoatsDiagonal()));//superior izquierda
 		assertFalse(mediumBoat.checkRule(1, 7, 2, mockBoard.getTestMediumBoatsDiagonal()));//inferior izquierda
@@ -91,8 +94,10 @@ public class BoatTest {
 		assertFalse(mediumBoat.checkRule(9, 9, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal arriba VL
 		assertTrue(mediumBoat.checkRule(2, 8, 1, mockBoard.getTestMediumBoatsDiagonal()));//v. Frontera
 		
+		
 		//barco grande
 		//vertical
+		mockBoard = new MockBoard();
 		assertFalse(bigBoat.checkRule(0, 0, 2, mockBoard.getTestBigBoats()));// conflicto  abajo
 		assertFalse(bigBoat.checkRule(0, 7, 2, mockBoard.getTestBigBoats()));// conflicto  abajo
 		assertFalse(bigBoat.checkRule(1, 2, 2, mockBoard.getTestBigBoats()));// conflicto  izquirda
@@ -108,6 +113,7 @@ public class BoatTest {
 		assertTrue(bigBoat.checkRule(7, 4, 1, mockBoard.getTestBigBoats()));// v.frontera
 		//diagonal
 		//vertical
+		mockBoard = new MockBoard();
 		assertFalse(bigBoat.checkRule(0, 1, 2, mockBoard.getTestBigBoatsDiagonal()));//esquina superior derecha
 		assertFalse(bigBoat.checkRule(2, 1, 2, mockBoard.getTestBigBoatsDiagonal()));//esquina superior izquierda
 		assertFalse(bigBoat.checkRule(0, 6, 2, mockBoard.getTestBigBoatsDiagonal()));//esquina inferior derecha
@@ -119,7 +125,7 @@ public class BoatTest {
 		assertFalse(bigBoat.checkRule(7, 8, 1, mockBoard.getTestBigBoatsDiagonal()));//esquina inferior izquierda
 		assertTrue(bigBoat.checkRule(7, 9, 1, mockBoard.getTestBigBoatsDiagonal()));
 		
-		
+		mockBoard = new MockBoard();
 		//subamarino
 		//vertical
 		assertFalse(submarine.checkRule(0, 0, 2, mockBoard.getTestSubmarine()));//conflicto abajo
@@ -134,7 +140,7 @@ public class BoatTest {
 		assertFalse(submarine.checkRule(2, 8, 1, mockBoard.getTestSubmarine()));//derecha
 		assertFalse(submarine.checkRule(7, 1, 1, mockBoard.getTestSubmarine()));//v.limite
 		assertTrue(submarine.checkRule(0, 0, 1, mockBoard.getTestSubmarine()));
-		
+		mockBoard = new MockBoard();
 		//diagonal
 		//orientacion vertical
 		assertFalse(submarine.checkRule(0, 0, 2, mockBoard.getTestSubmarineDiagonal()));//esquina inferior derecha
