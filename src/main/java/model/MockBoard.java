@@ -10,7 +10,7 @@ public class MockBoard extends Board {
 	
 	public int[][] getTestBoardLittleBoats(){
 		
-		int[][] board = getBoard();
+		int[][] board = super.getBoard();
 		
 		board[0][1] = 1;
 		board[0][8] = 1;
@@ -25,7 +25,7 @@ public class MockBoard extends Board {
 	}
 	
 	public int[][] getTestMediumBoats() {
-		int[][] board = getBoard();
+		int[][] board =  super.getBoard();
 		
 		board[0][2] = 1;
 		board[0][7] = 1;
@@ -40,7 +40,7 @@ public class MockBoard extends Board {
 	
 	
 	public int[][] getTestMediumBoatsDiagonal(){
-		int[][] board = getBoard();
+		int[][] board =  super.getBoard();
 		
 		board[0][0] = 1;
 		board[0][9] = 1;
@@ -54,7 +54,7 @@ public class MockBoard extends Board {
 	}
 	
 	public int[][] getTestBigBoats(){
-		int[][] board = getBoard();
+		int[][] board =  super.getBoard();
 		
 		board[0][3] = 1;
 		board[0][6] = 1;
@@ -68,7 +68,7 @@ public class MockBoard extends Board {
 	}
 	
 	public int[][] getTestBigBoatsDiagonal(){
-		int[][] board = getBoard();
+		int[][] board =  super.getBoard();
 		
 		board[1][0] = 1;
 		board[1][9] = 1;
@@ -79,7 +79,7 @@ public class MockBoard extends Board {
 	
 	public int[][] getTestSubmarine(){
 		
-		int[][] board = getBoard();
+		int[][] board =  super.getBoard();
 		
 		board[0][4] = 1;
 		board[3][4] = 1;
@@ -93,7 +93,7 @@ public class MockBoard extends Board {
 	
 	public int[][] getTestSubmarineDiagonal(){
 		
-		int[][] board = getBoard();
+		int[][] board =  super.getBoard();
 		
 		board[1][5] = 1;
 		board[5][5] = 1;
