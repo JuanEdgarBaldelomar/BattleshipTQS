@@ -259,7 +259,7 @@ public class MediumBoat implements Boat{
 					}
 					
 					
-				}else {
+				}else if (y > INITX_Y && y<FINALX_Y &&  x > INITX_Y && (x+mSize)<FINALX_Y) {
 					
 					//miramos parte superior e inferior
 					for (int i = 0;i<mSize;i++) {
