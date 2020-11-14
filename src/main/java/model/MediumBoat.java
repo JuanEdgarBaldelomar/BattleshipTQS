@@ -282,14 +282,10 @@ public class MediumBoat implements Boat{
 						
 					}else {
 						return false;
-					}
-					
+					}	
 				}
-				
 			}
 			
-		}else {
-			return false;
 		}
 		return false;
 	}
