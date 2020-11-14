@@ -45,7 +45,7 @@ public class MediumBoat implements Boat{
 						return false;
 					}
 					
-				}else if(y+(mSize-1) >= FINALX_Y) {// parte inferior
+				}else if(y+(mSize-1) <= FINALX_Y) {// parte inferior
 					if (x ==INITX_Y) {
 						
 						for (int j = 0; j<mSize;j++ ) {
