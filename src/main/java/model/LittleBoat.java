@@ -1,7 +1,11 @@
 package model;
 
-public class LittleBoat implements Boat {
-	
+public class LittleBoat{
+	static final int AGUA = 0;
+	static final int INITX_Y = 0;
+	static final int FINALX_Y  = 9;
+	static final int HORIZONTAL = 1;
+	static final int VERTICAL = 2;
 	private int mSize;
 	
 	public LittleBoat(int size) {
@@ -13,7 +17,7 @@ public class LittleBoat implements Boat {
 		return this.mSize;
 	}
 
-	@Override
+
 	public boolean checkRule(int x, int y, int orientacion, int[][] board) {
 		// TODO Auto-generated method stub
 		

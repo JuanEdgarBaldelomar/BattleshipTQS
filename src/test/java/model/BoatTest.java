@@ -92,7 +92,7 @@ public class BoatTest {
 		assertFalse(mediumBoat.checkRule(8, 2, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal abajo VF
 		assertFalse(mediumBoat.checkRule(8, 8, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal arriba VF
 		assertFalse(mediumBoat.checkRule(9, 9, 1, mockBoard.getTestMediumBoatsDiagonal()));//horizontal arriba VL
-		assertTrue(mediumBoat.checkRule(2, 8, 1, mockBoard.getTestMediumBoatsDiagonal()));//v. Frontera
+		assertTrue(mediumBoat.checkRule(2, 8, 2, mockBoard.getTestMediumBoatsDiagonal()));//v. Frontera
 		
 		
 		//barco grande
@@ -132,7 +132,7 @@ public class BoatTest {
 		assertFalse(submarine.checkRule(0, 5, 2, mockBoard.getTestSubmarine()));//conflictO arriba,
 		assertFalse(submarine.checkRule(1, 3, 2, mockBoard.getTestSubmarine()));//conflictO izquierda
 		assertFalse(submarine.checkRule(2, 3, 2, mockBoard.getTestSubmarine()));//conflictO derecha
-		assertFalse(submarine.checkRule(9, 6, 2, mockBoard.getTestSubmarine()));//v. lIMITE
+		assertTrue(submarine.checkRule(9, 6, 2, mockBoard.getTestSubmarine()));//v. lIMITE
 		//horizontal
 		assertFalse(submarine.checkRule(3, 3, 1, mockBoard.getTestSubmarine()));//abajo
 		assertFalse(submarine.checkRule(3, 5, 1, mockBoard.getTestSubmarine()));//arriba

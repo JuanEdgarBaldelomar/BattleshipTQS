@@ -95,6 +95,7 @@ public class MockBoard extends Board {
 		
 		int[][] board =  super.getBoard();
 		
+		board[1][4] = 1;
 		board[1][5] = 1;
 		board[5][5] = 1;
 		board[5][9] = 1;
