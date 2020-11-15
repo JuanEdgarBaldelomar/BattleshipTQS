@@ -149,7 +149,21 @@ public class BoatTest {
 		assertFalse(submarine.checkRule(2, 6, 2, mockBoard.getTestSubmarineDiagonal()));//esquina superior izquierda				
 		
 	}
-	
+	@Test
+	public void testFreeSpace() {
+		MockBoard mockBoard = new  MockBoard();
+		
+		//particion equivalente, los  demas barcos tendran el comportameiento igual a medium boat, menos littlebboat
+		assertFalse(mediumBoat.checkRule(0, 3, 2, mockBoard.getBoardTestFreeSpace()));
+		assertFalse(mediumBoat.checkRule(2, 3, 2, mockBoard.getBoardTestFreeSpace()));
+		assertFalse(mediumBoat.checkRule(5, 3, 1, mockBoard.getBoardTestFreeSpace() ));
+		assertFalse(mediumBoat.checkRule(5, 5, 1, mockBoard.getBoardTestFreeSpace() ));
+		assertTrue(mediumBoat.checkRule(1, 3, 2, mockBoard.getBoardTestFreeSpace()));
+		assertTrue(mediumBoat.checkRule(4, 8, 1, mockBoard.getBoardTestFreeSpace()));
+		
+		
+		
+	}
 	
 	
 
