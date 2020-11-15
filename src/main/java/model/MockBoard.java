@@ -113,7 +113,7 @@ public class MockBoard extends Board {
 		board[0][5]  = 1;
 		board[2][4]  = 1;
 		board[6][3]  = 1;
-		board[0][5]  = 1;
+		board[7][5]  = 1;
 		
 		return board;
 		
