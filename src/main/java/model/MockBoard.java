@@ -119,7 +119,24 @@ public class MockBoard extends Board {
 		
 	}
 	
-	
+	public int[][] getB1(){
+		
+		int[][] board = super.getBoard();
+		board[0][1] = 1;
+		board[0][3] = 1;
+		board[0][5] = 1;
+		board[0][7] = 1;
+		
+		board[2][0] = 2;
+		board[3][0] = 2;
+		board[2][2] = 2;
+		board[3][2] = 2;
+		board[2][4] = 2;
+		board[3][4] = 2;
+		
+		return board;
+		
+	}
 	
 	
 }
