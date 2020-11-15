@@ -282,7 +282,31 @@ public abstract class Boat{
 	}
 
 	public boolean freeSpace(int x, int y,  int orientacion, int[][] board) {
-		return true;
+		
+		
+		
+		if (orientacion == VERTICAL) {
+			
+			for  (int  j = 0;j<mSize+1;j++) {
+				if(board[x][y+j] != AGUA) {
+					return false;
+				}
+			}
+			return true;
+			
+		}else {
+			
+			for (int i = 0;i<mSize+1;i++) {
+				if(board[x+i][y]  != AGUA) {
+					return false;
+				}
+				
+			}
+			return true;
+			
+		}
+		
+		
 	}
 	
 }
