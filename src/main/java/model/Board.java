@@ -36,6 +36,9 @@ public class Board {
 		
 	}
 	
+	public void setMockBoard(int[][] board) {
+		mBoard  = board;
+	}
 	
 	public int[][] getBoard(){
 		return mBoard;
