@@ -20,7 +20,7 @@ public class BoardTest {
 		assertTrue(gameBoard.getSizeX()==10);
 		assertTrue(gameBoard.getSizeY()==10);
 		assertTrue(gameBoard.equals(gameBoard2));
-		asserTrue(gameBoard.mIdBoats.size()==10);
+		assertTrue(gameBoard.mIdBoats.size()==10);
 	}
 	
 	
