@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -9,7 +10,7 @@ public class Board {
 	private static final int msizeX  = 10;
 	private static final int msizeY = 10;
 	private int[][] mBoard;
-	
+	ArrayList<Integer> mIdBoats;
 	public Board() {
 		
 		mBoard = new int[msizeX][msizeY];
@@ -20,6 +21,18 @@ public class Board {
 				
 			}
 		}
+		
+		mIdBoats  = new  ArrayList<Integer>();
+		mIdBoats.add(1);
+		mIdBoats.add(1);
+		mIdBoats.add(1);
+		mIdBoats.add(1);
+		mIdBoats.add(2);
+		mIdBoats.add(2);
+		mIdBoats.add(2);
+		mIdBoats.add(3);
+		mIdBoats.add(3);
+		mIdBoats.add(4);
 		
 	}
 	
