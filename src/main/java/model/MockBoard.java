@@ -106,6 +106,19 @@ public class MockBoard extends Board {
 		
 	}
 	
+	public int[][] getBoardTestFreeSpace(){
+		
+		int[][] board = super.getBoard();
+		
+		board[0][5]  = 1;
+		board[2][4]  = 1;
+		board[6][3]  = 1;
+		board[0][5]  = 1;
+		
+		return board;
+		
+	}
+	
 	
 	
 	

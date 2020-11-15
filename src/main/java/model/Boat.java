@@ -281,6 +281,8 @@ public abstract class Boat{
 		return false;
 	}
 
-	
+	public boolean freeSpace(int x, int y,  int orientacion, int[][] board) {
+		return true;
+	}
 	
 }
