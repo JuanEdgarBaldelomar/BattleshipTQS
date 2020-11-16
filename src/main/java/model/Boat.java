@@ -315,7 +315,7 @@ public abstract class Boat{
 			
 		}else {
 			
-			for (int i = 0;i<mSize+1  || (mSize+1)  == 9;i++) {
+			for (int i = 0;i<mSize ;i++) {
 				if(board[x+i][y]  != AGUA) {
 					return false;
 				}

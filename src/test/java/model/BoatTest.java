@@ -157,7 +157,7 @@ public class BoatTest {
 		assertFalse(mediumBoat.freeSpace(0, 3, 2, mockBoard.getBoardTestFreeSpace()));
 		assertFalse(mediumBoat.freeSpace(2, 3, 2, mockBoard.getBoardTestFreeSpace()));
 		assertFalse(mediumBoat.freeSpace(5, 3, 1, mockBoard.getBoardTestFreeSpace() ));
-		assertFalse(mediumBoat.freeSpace(5, 5, 1, mockBoard.getBoardTestFreeSpace() ));
+		assertFalse(bigBoat.freeSpace(5, 5, 1, mockBoard.getBoardTestFreeSpace() ));
 		assertTrue(mediumBoat.freeSpace(1, 3, 2, mockBoard.getBoardTestFreeSpace()));
 		assertTrue(mediumBoat.freeSpace(4, 8, 1, mockBoard.getBoardTestFreeSpace()));
 		
