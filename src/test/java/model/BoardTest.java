@@ -74,6 +74,14 @@ public class BoardTest {
 		
 		
 	}
+	
+	@Test
+	public  void  testCheckWinner() {
+		assertTrue(gameBoard.checkWinner());
+		gameBoard.setMockBoard(mockboard.getBoardOneAlive());
+		assertFalse(gameBoard.checkWinner());
+	}
+	
 
 }
 		
