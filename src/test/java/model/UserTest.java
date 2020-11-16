@@ -1,12 +1,25 @@
 package model;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
 
+	
+	
+	MockUser mockUser;
+	int[] data;
+	User userTest;
+	@Before
+	public  void setUp() {
+		mockUser = new MockUser();
+		data = new int[4];
+		userTest = new User();
+	}
+	
+	
 	@Test
 	public void testGetSetNameUser() {
 		
@@ -138,7 +151,8 @@ public class UserTest {
 		assertEquals(2, aux70);
 		assertEquals(3, aux71);
 		
-		//Decisión coverage
+		/*
+		//Decisiï¿½n coverage
 		// pasamos valores para que el primer if sea True
 		
 		User testCondC1 = new User();
@@ -148,7 +162,7 @@ public class UserTest {
 		// pasamos valores para que el primer if sea False
 		
 		User testCondC2 = new User();
-		testCondC2.setCoordinates(-5, -5, 7, 5);
+		testCondC2.setCoordinates(-5, -5, 7, 5);*/ 
 		
 		}
 	
@@ -161,7 +175,15 @@ public class UserTest {
 		//assertTrue(2, aux50);
 		
 		*/
-
+	@Test
+	public void decisionTest() {
+		
+		data = mockUser.decisionTestTrue();
+		assertTrue(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		data = mockUser.decisionTestFalse();
+		assertFalse(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		
+	}
 		
 		
 	

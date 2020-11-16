@@ -19,13 +19,16 @@ public class User {
 		this.nameUser = nameUser;
 	}
 	
-	public void setCoordinates(int row, int col, int orientacion, int typeBoat) {
+	public boolean setCoordinates(int row, int col, int orientacion, int typeBoat) {
 		if(row >= 0 && row <= 9 && col >= 0 && col <= 9  && orientacion >0 && orientacion <= 2 && typeBoat >= 0 && typeBoat <= 3) {
 			
 			this.row=row;
 			this.col=col;
 			this.orientacion=orientacion;
 			this.typeBoat=typeBoat;
+			return true;
+		}else {
+			return false;
 		}
 		
 		}
