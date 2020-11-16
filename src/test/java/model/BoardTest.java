@@ -82,6 +82,12 @@ public class BoardTest {
 		assertFalse(gameBoard.checkWinner());
 	}
 	
+	@Test void testCopyBoard() {
+		
+		Board gameShootBoard = new Board();
+		assertTrue(gameBoard.equals(gameShootBoard));
+		
+	}
 
 }
 		
