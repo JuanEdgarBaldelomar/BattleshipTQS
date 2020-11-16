@@ -54,5 +54,105 @@ public class MockUser extends User {
 		
 	}
 	
+	public int[] conditionTestFirstParamTrue() {
+		
+		int[] parameters = new int[4];
+		
+		parameters[0] = 8;
+		parameters[1] = 2;
+		parameters[2] = 1;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+		
+	}
+	public int[] conditionTestFirstParamFalse() {
+		int[] parameters = new int[4];
+		
+		parameters[0] = 11;
+		parameters[1] = 2;
+		parameters[2] = 1;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+	}
+	
+	public int[] conditionTestSecondParamTrue() {
+		
+		int[] parameters = new int[4];
+		
+		parameters[0] = 8;
+		parameters[1] = 2;
+		parameters[2] = 1;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+		
+	}
+	
+	public int[] conditionTestSecondParamFalse() {
+		
+		int[] parameters = new int[4];
+		
+		parameters[0] = 8;
+		parameters[1] = 11;
+		parameters[2] = 1;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+	}
+	
+	public int[] conditionTestThirdParamTrue() {
+		int[] parameters = new int[4];
+		parameters[0] = 8;
+		parameters[1] = 2;
+		parameters[2] = 1;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+	}
+	
+	public int[] conditionTestThirdParamFalse() {
+		int[] parameters = new int[4];
+		parameters[0] = 8;
+		parameters[1] = 2;
+		parameters[2] = 3;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+		
+	}
+	public int[] conditionTestFourParamTrue() {
+		
+		int[] parameters = new int[4];
+		parameters[0] = 8;
+		parameters[1] = 2;
+		parameters[2] = 2;
+		parameters[3] = 2;
+		
+		return parameters;
+		
+		
+	}
+	
+	public int[] conditionTestFourParamFalse() {
+		
+		int[] parameters = new int[4];
+		parameters[0] = 8;
+		parameters[1] = 2;
+		parameters[2] = 2;
+		parameters[3] = 5;
+		
+		return parameters;
+		
+		
+	}
+	
 	
 }
