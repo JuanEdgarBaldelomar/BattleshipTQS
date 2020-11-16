@@ -155,6 +155,36 @@ public class MockBoard extends Board {
 		
 	}
 	
+	public int[][] getBoardOneAlive(){
+		
+		int board[][] = super.getBoard();
+		
+		
+		board[0][1] = 5;
+		board[0][3] = 5;
+		board[0][5] = 5;
+		board[0][7] = 5;
+		
+		board[2][2] = 5;
+		board[3][2] = 5;
+		
+		board[2][4] = 5;
+		board[3][4] = 5;
+		
+		board[5][6] = 2;
+		board[5][7] = 2;
+		
+		board[6][0] = 5;
+		board[7][0] = 5;
+		board[8][0] = 5;
+		board[9][0] = 5;
+		
+		return board;
+		
+	}
+	
+	
+	
 	
 }
 

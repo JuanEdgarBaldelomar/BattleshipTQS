@@ -228,4 +228,9 @@ public class Board {
 		}
 	}
 	
+	
+	public boolean checkWinner() {
+		return false;
+	}
+	
 }
