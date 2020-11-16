@@ -230,7 +230,19 @@ public class Board {
 	
 	
 	public boolean checkWinner() {
-		return false;
+		
+		
+		for (int  i =0;i<msizeX;i++) {
+			for (int j = 0 ;j<msizeY;j++) {
+				
+				if(mBoard[i][j] ==  LITTLEBOAT || mBoard[i][j] ==MEDIUMBOAT || mBoard[i][j] ==BIGBOAT || mBoard[i][j] ==SUBMARINE ) {
+					return false;
+				}
+				
+			}
+		}
+		return true;
+		
 	}
 	
 }
