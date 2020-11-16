@@ -85,6 +85,7 @@ public class BoardTest {
 	@Test void testCopyBoard() {
 		
 		Board gameShootBoard = new Board();
+		gameShootBoard.copyBoardToShoot();
 		assertTrue(gameBoard.equals(gameShootBoard));
 		
 	}
