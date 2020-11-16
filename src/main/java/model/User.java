@@ -20,7 +20,7 @@ public class User {
 	}
 	
 	public boolean setCoordinates(int row, int col, int orientacion, int typeBoat) {
-		if(row >= 0 && row <= 9 && col >= 0 && col <= 9  && orientacion >0 && orientacion <= 2 && typeBoat >= 0 && typeBoat <= 3) {
+		if(row >= 0 && row <= 9 && col >= 0 && col <= 9  && orientacion >0 && orientacion <= 2 && typeBoat >= 1 && typeBoat <= 4) {
 			
 			this.row=row;
 			this.col=col;

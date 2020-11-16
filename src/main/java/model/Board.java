@@ -69,6 +69,10 @@ public class Board {
 		return msizeY;
 	}
 	
+	public int getSizeIdBoats() {
+		return mIdBoats.size();
+	}
+	
 	public boolean equals(Board b2) {
 		
 		if(Arrays.deepEquals(this.mBoard, b2.getBoard())) {
