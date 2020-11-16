@@ -64,7 +64,7 @@ public class BoardTest {
 	@Test
 	public void testShootBoat() {
 		
-		gameBoard.setMockBoard(mockboard.getShootBoard());
+		gameBoard.setMockBoardShot(mockboard.getShootBoard());
 		assertTrue(gameBoard.shotBoat(1,3));
 		assertTrue(gameBoard.shotBoat(4,7));
 		assertFalse(gameBoard.shotBoat(4, 7));//volvemos a dispar  en un punto  ya dispardo
@@ -81,8 +81,8 @@ public class BoardTest {
 		gameBoard.setMockBoard(mockboard.getBoardOneAlive());
 		assertFalse(gameBoard.checkWinner());
 	}
-	
-	@Test void testCopyBoard() {
+	@Test
+	public void testCopyBoard() {
 		
 		Board gameShootBoard = new Board();
 		gameShootBoard.copyBoardToShoot(gameBoard.getBoard());

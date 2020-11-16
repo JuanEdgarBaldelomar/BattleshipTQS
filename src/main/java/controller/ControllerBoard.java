@@ -40,6 +40,15 @@ public class ControllerBoard {
 		return mBoardGame.shotBoat(x, y);
 	}
 	
+	public void getViewShootBoard() {
+		mViewBoard.printShootBoard(mBoardGame.getBoard());
+	}
 	
+	public void copyBoard(int[][] board) {
+		mBoardGame.copyBoardToShoot(board);
+	}
 	
+	public int[][] getBoard(){
+		return mBoardGame.getBoard();
+	}
 }

@@ -27,10 +27,12 @@ public class Board {
 	
 	
 	private int[][] mBoard;
+	private int[][] mBoardToShoot;
 	ArrayList<String> mIdBoats;
 	public Board() {
 		
 		mBoard = new int[msizeX][msizeY];
+		mBoardToShoot = new int[msizeX][msizeY];
 		for (int i = 0;i<msizeX;i++) {
 			for (int j = 0;j<msizeY;j++) {
 				
@@ -55,6 +57,9 @@ public class Board {
 	
 	public void setMockBoard(int[][] board) {
 		mBoard  = board;
+	}
+	public void setMockBoardShot(int[][] board) {
+		mBoardToShoot  = board;
 	}
 	
 	public int[][] getBoard(){
@@ -219,13 +224,13 @@ public class Board {
 	}
 	
 	public boolean shotBoat(int x, int y) {
-		if (mBoard[x][y] ==  AGUA) {
-			mBoard[x][y] = FAIL;
+		if (mBoardToShoot[x][y] ==  AGUA) {
+			mBoardToShoot[x][y] = FAIL;
 			return false;
-		}else if(mBoard[x][y] == FAIL) {
+		}else if(mBoardToShoot[x][y] == FAIL) {
 			return false;
-		}else if (mBoard[x][y] == LITTLEBOAT || mBoard[x][y]  == MEDIUMBOAT || mBoard[x][y] == BIGBOAT  || mBoard[x][y] == SUBMARINE) {
-			mBoard[x][y] = HIT;
+		}else if (mBoardToShoot[x][y] == LITTLEBOAT || mBoardToShoot[x][y]  == MEDIUMBOAT || mBoardToShoot[x][y] == BIGBOAT  || mBoardToShoot[x][y] == SUBMARINE) {
+			mBoardToShoot[x][y] = HIT;
 			return true;
 		}else {
 			return false;
@@ -239,7 +244,7 @@ public class Board {
 		for (int  i =0;i<msizeX;i++) {
 			for (int j = 0 ;j<msizeY;j++) {
 				
-				if(mBoard[i][j] ==  LITTLEBOAT || mBoard[i][j] ==MEDIUMBOAT || mBoard[i][j] ==BIGBOAT || mBoard[i][j] ==SUBMARINE ) {
+				if(mBoardToShoot[i][j] ==  LITTLEBOAT || mBoard[i][j] ==MEDIUMBOAT || mBoard[i][j] ==BIGBOAT || mBoard[i][j] ==SUBMARINE ) {
 					return false;
 				}
 				
@@ -251,7 +256,13 @@ public class Board {
 	
 	
 	public void copyBoardToShoot(int[][] boardToShoot) {
-		
+		for (int i = 0;i<msizeX;i++) {
+			for (int j = 0;j<msizeY;j++) {
+				
+				mBoardToShoot[i][j] = boardToShoot[i][j];
+				
+			}
+		}
 	}
 	
 }

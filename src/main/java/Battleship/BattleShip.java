@@ -117,6 +117,8 @@ public class BattleShip {
 		
 		boolean repeatShootUser1 = false;
 		boolean repeatShootUser2 = false;
+		controllerBoard1.copyBoard(controllerBoard2.getBoard());
+		controllerBoard2.copyBoard(controllerBoard1.getBoard());
 		
 		try (Scanner keyBoard = new Scanner(System.in)) {
 			while(!controllerBoard1.getWinner() || !controllerBoard2.getWinner()) {
@@ -127,14 +129,14 @@ public class BattleShip {
 				do {
 					repeatShootUser1 = controllerBoard1.shootBoat(x, y);
 				}while(repeatShootUser1);
-				
+				controllerBoard1.getViewShootBoard();
 				controllerUser2.getShootMsg();
 				int x2 = keyBoard.nextInt();
 				int y2 =keyBoard.nextInt();
 				do {
 					repeatShootUser2 = controllerBoard2.shootBoat(x2, y2);
 				}while(repeatShootUser2);
-				
+				controllerBoard2.getViewShootBoard();
 			}
 		}
 		
