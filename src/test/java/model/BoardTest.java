@@ -61,6 +61,19 @@ public class BoardTest {
 		
 	}
 	
+	@Test
+	public void testShootBoat() {
+		
+		gameBoard.setMockBoard(mockboard.getShootBoard());
+		assertTrue(gameBoard.shotBoat(1,3));
+		assertTrue(gameBoard.shotBoat(4,7));
+		assertFalse(gameBoard.shotBoat(4, 7));//volvemos a dispar  en un punto  ya dispardo
+		assertFalse(gameBoard.shotBoat(5, 3));
+		assertFalse(gameBoard.shotBoat(7, 3));
+		assertFalse(gameBoard.shotBoat(7, 1));
+		
+		
+	}
 
 }
 		

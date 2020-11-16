@@ -21,7 +21,9 @@ public class Board {
 	private static final int BIGBOAT = 3;
 	private static final int SUBMARINE  = 4;
 	private static final int VERTICAL = 2;
-	
+	private static final int AGUA = 0;
+	private static final int FAIL  = 6;
+	private static final int HIT = 5;
 	
 	
 	private int[][] mBoard;
@@ -211,4 +213,19 @@ public class Board {
 		
 		
 	}
+	
+	public boolean shotBoat(int x, int y) {
+		if (mBoard[x][y] ==  AGUA) {
+			mBoard[x][y] = FAIL;
+			return false;
+		}else if(mBoard[x][y] == FAIL) {
+			return false;
+		}else if (mBoard[x][y] == LITTLEBOAT || mBoard[x][y]  == MEDIUMBOAT || mBoard[x][y] == BIGBOAT  || mBoard[x][y] == SUBMARINE) {
+			mBoard[x][y] = HIT;
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }

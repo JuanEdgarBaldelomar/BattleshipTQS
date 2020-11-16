@@ -147,7 +147,7 @@ public class MockBoard extends Board {
 		board[1][3] =  1;
 		board[4][7] =  1;
 		board[5][3] =  5;
-		board[7][1] =  5;
+		board[7][1] =  0;
 		board[7][3] =  6;
 		
 		return board;
