@@ -36,6 +36,6 @@ public class ViewBoard {
 			System.out.println();
 		}
 		
-	}
+	} 
 	
 }
