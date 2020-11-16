@@ -250,7 +250,7 @@ public class Board {
 	}
 	
 	
-	public void copyBoardToShoot() {
+	public void copyBoardToShoot(int[][] boardToShoot) {
 		
 	}
 	
