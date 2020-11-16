@@ -1,5 +1,6 @@
 package model;
 
+
 public abstract class Boat{
 	static final int AGUA = 0;
 	static final int INITX_Y = 0;
@@ -135,6 +136,24 @@ public abstract class Boat{
 					if(board[x][y-1]==AGUA && board[x-1][y-1] == AGUA) {
 						return true;
 					}else{
+						return false;
+					}
+					
+				}else if(x == INITX_Y &&  (y+mSize-1)<FINALX_Y) {
+					
+					for (int j = 0;j<mSize;j++) {
+						if(board[x][y+j]!= AGUA) {
+							return  false;
+						}
+					}
+					
+					//miramos  arribba y abajo
+					if (board[x][y-1] !=  AGUA  || board[x][y+mSize] !=  AGUA) {
+						return false;
+					}else if(board[x+1][y-1]  == AGUA && board[x+1][y+mSize] == AGUA) {
+						return true;
+						
+					}else {
 						return false;
 					}
 					
@@ -296,7 +315,7 @@ public abstract class Boat{
 			
 		}else {
 			
-			for (int i = 0;i<mSize+1;i++) {
+			for (int i = 0;i<mSize+1  && (mSize+1)  == 9;i++) {
 				if(board[x+i][y]  != AGUA) {
 					return false;
 				}

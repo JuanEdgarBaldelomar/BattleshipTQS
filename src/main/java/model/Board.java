@@ -21,12 +21,11 @@ public class Board {
 	private static final int BIGBOAT = 3;
 	private static final int SUBMARINE  = 4;
 	private static final int VERTICAL = 2;
-	private static final int HORIZONTAL = 1;
 	
 	
 	
 	private int[][] mBoard;
-	ArrayList<Integer> mIdBoats;
+	ArrayList<String> mIdBoats;
 	public Board() {
 		
 		mBoard = new int[msizeX][msizeY];
@@ -38,17 +37,17 @@ public class Board {
 			}
 		}
 		
-		mIdBoats  = new  ArrayList<Integer>();
-		mIdBoats.add(1);
-		mIdBoats.add(1);
-		mIdBoats.add(1);
-		mIdBoats.add(1);
-		mIdBoats.add(2);
-		mIdBoats.add(2);
-		mIdBoats.add(2);
-		mIdBoats.add(3);
-		mIdBoats.add(3);
-		mIdBoats.add(4);
+		mIdBoats  = new  ArrayList<String>();
+		mIdBoats.add("LITTLE");
+		mIdBoats.add("LITTLE");
+		mIdBoats.add("LITTLE");
+		mIdBoats.add("LITTLE");
+		mIdBoats.add("MEDIUM");
+		mIdBoats.add("MEDIUM");
+		mIdBoats.add("MEDIUM");
+		mIdBoats.add("BIG");
+		mIdBoats.add("BIG");
+		mIdBoats.add("SUBMARINE");
 		
 	}
 	
@@ -93,9 +92,10 @@ public class Board {
 			
 			LittleBoat littleBoat =  new LittleBoat(LITTLEBOAT);
 			if(littleBoat.checkRule(initX, initY, orientacion, mBoard)) {
-				if(mIdBoats.contains(LITTLEBOAT)) {
+				if(mIdBoats.contains("LITTLE")) {
 					mBoard[initX][initY] =  LITTLEBOAT;
-					mIdBoats.remove(LITTLEBOAT);
+					mIdBoats.remove("LITTLE");
+					return OK;
 				}else {
 					return LIMITELITTLEBOATS;
 				}
@@ -103,7 +103,7 @@ public class Board {
 			}else {
 				return NODISTANCE;
 			}
-			break;
+			
 		}
 		
 		case MEDIUMBOAT:{
@@ -111,16 +111,19 @@ public class Board {
 			MediumBoat mediumBoat  = new MediumBoat(MEDIUMBOAT);
 			if(mediumBoat.checkRule(initX, initY, orientacion, mBoard)) {
 				if(mediumBoat.freeSpace(initX, initY, orientacion, mBoard)) {
-					if(mIdBoats.contains(MEDIUMBOAT)) {
-						mIdBoats.remove(MEDIUMBOAT);
+					if(mIdBoats.contains("MEDIUM")) {
+						mIdBoats.remove("MEDIUM");
 						if (orientacion == VERTICAL) {
 							for (int j = 0;j<mediumBoat.getSize();j++) {
 								mBoard[initX][initY+j] = MEDIUMBOAT;
+								
 							}
+							return OK;
 						}else {
 							for (int i = 0;i<mediumBoat.getSize();i++) {
 								mBoard[initX+i][initY]  = MEDIUMBOAT;
 							}
+							return OK;
 						}
 					}else {
 						return LIMITEMEDIUMBBOATS;
@@ -135,23 +138,25 @@ public class Board {
 				return NODISTANCE;
 			}
 			
-			break;
+			
 		}
 		
 		case BIGBOAT:{
 			BigBoat bigBoat = new BigBoat(BIGBOAT);
 			if(bigBoat.checkRule(initX, initY, orientacion, mBoard)) {
 				if(bigBoat.freeSpace(initX, initY, orientacion, mBoard)) {
-					if(mIdBoats.contains(BIGBOAT)) {
-						mIdBoats.remove(BIGBOAT);
+					if(mIdBoats.contains("BIG")) {
+						mIdBoats.remove("BIG");
 						if (orientacion == VERTICAL) {
 							for (int j = 0;j<bigBoat.getSize();j++) {
 								mBoard[initX][initY+j] = BIGBOAT;
 							}
+							return OK;
 						}else {
 							for (int i = 0;i<bigBoat.getSize();i++) {
 								mBoard[initX+i][initY]  = BIGBOAT;
 							}
+							return OK;
 						}
 					}else {
 						return LIMITEBIGBOATS;
@@ -166,22 +171,24 @@ public class Board {
 				return NODISTANCE;
 			}
 			
-			break;
+			
 		}
 		case SUBMARINE:{
 			Submarine submarine = new Submarine(SUBMARINE);
 			if(submarine.checkRule(initX, initY, orientacion, mBoard)) {
 				if(submarine.freeSpace(initX, initY, orientacion, mBoard)) {
-					if(mIdBoats.contains(SUBMARINE)) {
-						mIdBoats.remove(SUBMARINE);
+					if(mIdBoats.contains("SUBMARINE")) {
+						mIdBoats.remove("SUBMARINE");
 						if (orientacion == VERTICAL) {
 							for (int j = 0;j<submarine.getSize();j++) {
 								mBoard[initX][initY+j] = SUBMARINE;
 							}
+							return OK;
 						}else {
 							for (int i = 0;i<submarine.getSize();i++) {
 								mBoard[initX+i][initY]  = SUBMARINE;
 							}
+							return OK;
 						}
 					}else {
 						return LIMITESUBMARINO;
@@ -195,7 +202,7 @@ public class Board {
 			}else {
 				return NODISTANCE;
 			}
-			break;
+		
 		}
 		
 		default:
