@@ -1,6 +1,8 @@
 package model;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class UserTest {
@@ -140,13 +142,13 @@ public class UserTest {
 		// pasamos valores para que el primer if sea True
 		
 		User testCondC1 = new User();
-		testCondC1.setCoordinates(5, 4, 2, 3);
+		assertTrue(testCondC1.setCoordinates(5, 4, 2, 3));
 		
 		
 		// pasamos valores para que el primer if sea False
 		
 		User testCondC2 = new User();
-		testCondC2.setCoordinates(-5, -5, 7, 5);
+		assertFalse(testCondC2.setCoordinates(-5, -5, 7, 5));
 		
 		//Condicion coverage
 		//x a true
