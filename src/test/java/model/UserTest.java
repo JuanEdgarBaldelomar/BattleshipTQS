@@ -184,7 +184,31 @@ public class UserTest {
 		assertFalse(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
 		
 	}
+	
+	@Test
+	public void conditionCovTest() {
 		
+		data = mockUser.conditionTestFirstParamTrue();
+		assertTrue(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		data = mockUser.conditionTestFirstParamFalse();
+		assertFalse(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		
+		data = mockUser.conditionTestSecondParamTrue();
+		assertTrue(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		data = mockUser.conditionTestSecondParamFalse();
+		assertFalse(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		
+		data = mockUser.conditionTestThirdParamTrue();
+		assertTrue(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		data = mockUser.conditionTestThirdParamFalse();
+		assertFalse(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		
+		data = mockUser.conditionTestFourParamTrue();
+		assertTrue(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		data = mockUser.conditionTestFourParamFalse();
+		assertFalse(userTest.setCoordinates(data[0], data[1], data[2], data[3]));
+		
+	}
 		
 	
 	
