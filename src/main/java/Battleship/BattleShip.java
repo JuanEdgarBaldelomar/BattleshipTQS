@@ -1,4 +1,5 @@
 package Battleship;
+import java.io.IOException;
 import java.util.Scanner;
 
 import controller.ControllerBoard;
@@ -10,7 +11,7 @@ import view.ViewUser;
 
 public class BattleShip {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
 		User modelUser1 = new User();
@@ -68,85 +69,97 @@ public class BattleShip {
 			
 			controllerBoard1.getViewBoard();
 			
-			try (Scanner keyBoard1 = new Scanner(System.in)) {
-				controllerUser2.getViewSetName2();
-				String userName2 = keyBoard1.nextLine();
-				controllerUser2.setUserName(userName2);
+		
+			controllerUser2.getViewSetName2();
+			String userName2 = keyBoard.next();
+			controllerUser2.setUserName(userName2);
+			
+			while(controllerBoard2.canSetBoats() !=0) {
+					
+				controllerUser2.getViewSetCord();
 				
-				while(controllerBoard2.canSetBoats() !=0) {
+				int x = keyBoard.nextInt();
+				int y = keyBoard.nextInt();
+				controllerUser2.getViewOrientacion();
+				int orientacion = keyBoard.nextInt();
+				controllerUser2.getViewTypeBoat();
+				int tipo = keyBoard.nextInt();
 					
-					controllerUser2.getViewSetCord();
-					int x = keyBoard1.nextInt();
-					int y = keyBoard1.nextInt();
-					controllerUser2.getViewOrientacion();
-					int orientacion = keyBoard1.nextInt();
-					controllerUser2.getViewTypeBoat();
-					int tipo = keyBoard1.nextInt();
-					
-					if(controllerUser2.setAllData(x, y, orientacion, tipo)) {
+				if(controllerUser2.setAllData(x, y, orientacion, tipo)) {
 						
-						int code = controllerBoard2.setBoatsBoard(x,y,orientacion,tipo);
-						if(code == 1) {
-							controllerUser2.getOKMsg();
-						}else if(code == 2) {
-							controllerUser2.getErrBoatType1();
-						}else if (code == 3) {
-							controllerUser2.getErrBoatType2();
-						}else if(code == 4) {
-							controllerUser2.getErrBoatType3();
-						}else if (code == 5) {
-							controllerUser2.getErrBoatType4();
-						}else if(code == 6) {
-							controllerUser2.getErrRule();
-						}else if(code == 7) {
-							controllerUser2.getErrEspacio();
-						}
+					int code = controllerBoard2.setBoatsBoard(x,y,orientacion,tipo);
+					if(code == 1) {
+						controllerUser2.getOKMsg();
+					}else if(code == 2) {
+						controllerUser2.getErrBoatType1();
+					}else if (code == 3) {
+						controllerUser2.getErrBoatType2();
+					}else if(code == 4) {
+						controllerUser2.getErrBoatType3();
+					}else if (code == 5) {
+						controllerUser2.getErrBoatType4();
+					}else if(code == 6) {
+						controllerUser2.getErrRule();
+					}else if(code == 7) {
+						controllerUser2.getErrEspacio();
+					}					
 						
-						
-					}else {
-						controllerUser2.getErrorMsg();
-					}
+				}else {
+					controllerUser2.getErrorMsg();
 				}
 			}
 			
 			
-		}
+			
+			controllerBoard2.getViewBoard();
+			
+			boolean repeatShootUser1 = true;
+			boolean repeatShootUser2 = true;
+			controllerBoard1.copyBoard(controllerBoard2.getBoard());
+			controllerBoard2.copyBoard(controllerBoard1.getBoard());
+			
+			
+			while(!controllerBoard1.getWinner() && !controllerBoard2.getWinner()) {
 		
-		
-		controllerBoard2.getViewBoard();
-		
-		boolean repeatShootUser1 = false;
-		boolean repeatShootUser2 = false;
-		controllerBoard1.copyBoard(controllerBoard2.getBoard());
-		controllerBoard2.copyBoard(controllerBoard1.getBoard());
-		
-		try (Scanner keyBoard = new Scanner(System.in)) {
-			while(!controllerBoard1.getWinner() || !controllerBoard2.getWinner()) {
 				
-				controllerUser1.getShootMsg();
-				int x = keyBoard.nextInt();
-				int y =keyBoard.nextInt();
-				do {
+				
+				while(repeatShootUser1 && !controllerBoard1.getWinner() && !controllerBoard2.getWinner()){
+					
+					controllerUser1.getShootMsg();
+					int x = keyBoard.nextInt();
+					int y = keyBoard.nextInt();
 					repeatShootUser1 = controllerBoard1.shootBoat(x, y);
-				}while(repeatShootUser1);
-				controllerBoard1.getViewShootBoard();
-				controllerUser2.getShootMsg();
-				int x2 = keyBoard.nextInt();
-				int y2 =keyBoard.nextInt();
-				do {
+					controllerBoard1.getViewShootBoard();
+				} 
+				
+				repeatShootUser1 = true;
+				
+				//Runtime.getRuntime().exec("clear");
+
+				
+				while(repeatShootUser2 && !controllerBoard2.getWinner() && !controllerBoard1.getWinner()){
+					controllerUser2.getShootMsg();
+					int x2 = keyBoard.nextInt();
+					int y2 =keyBoard.nextInt();
 					repeatShootUser2 = controllerBoard2.shootBoat(x2, y2);
-				}while(repeatShootUser2);
-				controllerBoard2.getViewShootBoard();
+					controllerBoard2.getViewShootBoard();
+				}
+			
+				//Runtime.getRuntime().exec("clear");
+				repeatShootUser2 = true;
 			}
+			
+			
+			if(controllerBoard1.getWinner()) {
+				controllerUser1.getViewWin();
+			}else {
+				controllerUser2.getViewWin();
+			}
+			
+					
 		}
 		
-		if(controllerBoard1.getWinner()) {
-			controllerUser1.getViewWin();
-		}else {
-			controllerUser2.getViewWin();
-		}
-		
-		
+
 
 	}
 

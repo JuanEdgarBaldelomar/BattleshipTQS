@@ -41,7 +41,7 @@ public class ControllerBoard {
 	}
 	
 	public void getViewShootBoard() {
-		mViewBoard.printShootBoard(mBoardGame.getBoard());
+		mViewBoard.printShootBoard(mBoardGame.getShootBoard());
 	}
 	
 	public void copyBoard(int[][] board) {

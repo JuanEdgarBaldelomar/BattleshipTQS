@@ -66,6 +66,11 @@ public class Board {
 		return mBoard;
 	}
 	
+	public int[][] getShootBoard(){
+		return mBoardToShoot;
+	}
+	
+	
 	public int getSizeX() {
 		return msizeX;
 	}
@@ -224,17 +229,24 @@ public class Board {
 	}
 	
 	public boolean shotBoat(int x, int y) {
-		if (mBoardToShoot[x][y] ==  AGUA) {
-			mBoardToShoot[x][y] = FAIL;
-			return false;
-		}else if(mBoardToShoot[x][y] == FAIL) {
-			return false;
-		}else if (mBoardToShoot[x][y] == LITTLEBOAT || mBoardToShoot[x][y]  == MEDIUMBOAT || mBoardToShoot[x][y] == BIGBOAT  || mBoardToShoot[x][y] == SUBMARINE) {
-			mBoardToShoot[x][y] = HIT;
-			return true;
+		
+		if ( x >= 0 && x <= 9 &&  y >= 0 && y <= 9 ) {
+			if (mBoardToShoot[x][y] ==  AGUA) {
+				mBoardToShoot[x][y] = FAIL;
+				return false;
+			}else if(mBoardToShoot[x][y] == FAIL) {
+				return false;
+			}else if (mBoardToShoot[x][y] == LITTLEBOAT || mBoardToShoot[x][y]  == MEDIUMBOAT || mBoardToShoot[x][y] == BIGBOAT  || mBoardToShoot[x][y] == SUBMARINE) {
+				mBoardToShoot[x][y] = HIT;
+				return true;
+			}else {
+				return false;
+			}
 		}else {
 			return false;
 		}
+		
+		
 	}
 	
 	
@@ -244,7 +256,7 @@ public class Board {
 		for (int  i =0;i<msizeX;i++) {
 			for (int j = 0 ;j<msizeY;j++) {
 				
-				if(mBoardToShoot[i][j] ==  LITTLEBOAT || mBoard[i][j] ==MEDIUMBOAT || mBoard[i][j] ==BIGBOAT || mBoard[i][j] ==SUBMARINE ) {
+				if(mBoardToShoot[i][j] ==  LITTLEBOAT || mBoardToShoot[i][j] ==MEDIUMBOAT || mBoardToShoot[i][j] ==BIGBOAT || mBoardToShoot[i][j] ==SUBMARINE ) {
 					return false;
 				}
 				
